@@ -1,0 +1,43 @@
+<html>
+<head>
+[% DEFAULT
+   name = 'Moon'
+   title = 'Hello World'
+%]
+<title>[% title %]</title>
+</head>
+<body>
+<h1>Hello [% name %]</h1>
+
+<table>
+<tr>
+<th>Email</th>
+<th>Age</th>
+</tr>
+[% for item in users %]
+<tr>
+<td>[% item.key %]</td>
+<td>[% item.value %]</td>
+</tr>
+[% end %]
+</table>
+
+<ul>
+[% for li in ul %]
+<li>[% li %]</li>
+[% end %]
+</ul>
+
+[% if anumber < 5 %]
+<p>This number test should not show up.</p>
+[% elsif anumber < 10 %]
+<p>Elseif worked</p>
+[% else %]
+<p>This else should not be caught</p>
+[% end %]
+
+[% INCLUDE "included" name="world" %]
+
+
+</body>
+</html>
